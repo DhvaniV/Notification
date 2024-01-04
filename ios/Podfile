@@ -27,6 +27,11 @@ end
 
 target 'pushNotification' do
   config = use_native_modules!
+  
+  pod 'FirebaseCore', :modular_headers => true
+  pod 'Firebase', :modular_headers => true
+  pod 'FirebaseCoreInternal', :modular_headers => true
+  pod 'GoogleUtilities', :modular_headers => true
 
   use_react_native!(
     :path => config[:reactNativePath],
@@ -41,6 +46,8 @@ target 'pushNotification' do
 
   target 'pushNotificationTests' do
     inherit! :complete
+
+ 
     # Pods for testing
   end
 
